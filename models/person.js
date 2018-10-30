@@ -4,6 +4,7 @@ class Person {
         this.surname = surname[0].toUpperCase() + surname.slice([1])
         this.dob = dob
         this.emails = []
+        this.phoneNumbers = []
     }
 
     fullName() {
@@ -12,6 +13,21 @@ class Person {
 
     addEmail(email) {
         this.emails.push(email)
+    }
+
+    addPhoneNumber(phoneNumber) {
+        this.phoneNumbers.push(phoneNumber)
+    }
+
+    returnFormattedDetails() {
+        return this.fullName() + '\n'
+        + "--------"
+        + '\n' + "DOB: " + this.dob + '\n' + '\n'
+        + "Email Addresses:" + '\n' + '- '
+        + this.emails.join('\n'+ '- ' )
+        + '\n' + '\n'
+        + "Phone Numbers:" + '\n' + '- '
+        + this.phoneNumbers.join('\n' + '- ')
     }
 }
 

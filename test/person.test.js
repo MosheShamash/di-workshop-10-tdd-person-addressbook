@@ -29,4 +29,31 @@ describe('Person', ()=> {
         person.addEmail('mo@gmail.com')
         expect(person.emails).to.deep.equal(['joe@gmail.com', 'mo@gmail.com'])
     })
+
+    it('Should accept new phone numbers and adds them to the array', ()=> {
+        var person = new Person('jonathan', 'rafaeli', '1 Jan 1990')
+        person.addPhoneNumber('07909997888')
+        person.addPhoneNumber('07465776555')
+        expect(person.phoneNumbers).to.deep.equal(['07909997888', '07465776555'])
+    })
+
+    it("Should return a formatted summary of the Person's information", ()=> {
+        var person = new Person('jonathan', 'rafaeli', '1 Jan 1990')
+        person.addEmail('joe@gmail.com')
+        person.addEmail('mo@gmail.com')
+        person.addPhoneNumber('07909997888')
+        person.addPhoneNumber('07465776555')
+        var formattedDetails = 
+        "Jonathan Rafaeli" + '\n' + "--------"
+        + '\n' + "DOB: 1 Jan 1990" + '\n' + '\n'
+        + "Email Addresses:" + '\n'
+        + "- joe@gmail.com" + '\n'
+        + "- mo@gmail.com" + '\n' + '\n'
+        + "Phone Numbers:" + '\n'
+        + "- 07909997888" + '\n'
+        + "- 07465776555"
+
+        expect(person.returnFormattedDetails()).to.equal(formattedDetails)
+
+    })
 })
