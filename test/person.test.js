@@ -1,4 +1,8 @@
 const chai = require('chai')
 const expect = chai.expect
 
-// Your Person test goes here!
+describe('Person', ()=> {
+    it('Should inititalize properly', ()=> {
+        var person = new Person('Jonathan', 'Rafaeli')
+    })
+})
