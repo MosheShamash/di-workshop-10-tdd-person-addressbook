@@ -2,6 +2,7 @@ const chai = require('chai')
 const expect = chai.expect
 
 const Person = require('../models/person.js')
+const Pet = require('../models/pet.js')
 
 describe('Person', ()=> {
     it('Should inititalize properly', ()=> {
@@ -55,5 +56,10 @@ describe('Person', ()=> {
 
         expect(person.returnFormattedDetails()).to.equal(formattedDetails)
 
+    })
+
+    it("Should show its pets", ()=> {
+        var person = new Person('jonathan', 'rafaeli', '1 Jan 1990')
+        var pet1 = new Pet()
     })
 })

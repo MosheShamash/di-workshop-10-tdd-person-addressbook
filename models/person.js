@@ -5,6 +5,7 @@ class Person {
         this.dob = dob
         this.emails = []
         this.phoneNumbers = []
+        this.pets = []
     }
 
     fullName() {
@@ -28,6 +29,10 @@ class Person {
         + '\n' + '\n'
         + "Phone Numbers:" + '\n' + '- '
         + this.phoneNumbers.join('\n' + '- ')
+    }
+
+    addPet(pet) {
+        this.pets.push(pet)
     }
 }
 
